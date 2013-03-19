@@ -20,7 +20,7 @@ public class TutorialPluginConfigurator extends VPluginConfigurator{
 
     public TutorialPluginConfigurator() {
         //specify the plugin name and version
-       setIdentifier(new PluginIdentifier("Tutorial-Plugin-01", "0.1"));
+       setIdentifier(new PluginIdentifier("Tutorial-Plugin01", "0.1"));
 
        // optionally allow other plugins to use the api of this plugin
        // you can specify packages that shall be
@@ -65,6 +65,8 @@ public class TutorialPluginConfigurator extends VPluginConfigurator{
            //
            // vapi.addComponent(MyComponent.class);
            // vapi.addTypeRepresentation(MyType.class);
+           
+           vapi.addComponent(TutorialComponent01.class);
        }
    }
 
