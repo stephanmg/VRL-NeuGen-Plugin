@@ -39,7 +39,6 @@ dependencies {
     //    compile (group: 'eu.mihosoft.vrl', name: 'vrl', version: '0.4.2.8.5-SNAPSHOT', classifier: 'sources')
     //    compile (group: 'eu.mihosoft.vrl', name: 'vrl', version: '0.4.2.8.5-SNAPSHOT', classifier: 'javadoc')
 
-    compile (group: 'org.antlr', name: 'antlr4', version: '4.1')
 }
 
 def loadProperties(String sourceFileName) {
