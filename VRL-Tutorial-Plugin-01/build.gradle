@@ -36,8 +36,8 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.10'
     
     compile (group: 'eu.mihosoft.vrl', name: 'vrl', version: '0.4.2.8.5-SNAPSHOT')
-    //    compile (group: 'eu.mihosoft.vrl', name: 'vrl', version: '0.4.2.8.5-SNAPSHOT', classifier: 'sources')
-    //    compile (group: 'eu.mihosoft.vrl', name: 'vrl', version: '0.4.2.8.5-SNAPSHOT', classifier: 'javadoc')
+    compile (group: 'eu.mihosoft.vrl', name: 'vrl', version: '0.4.2.8.5-SNAPSHOT', classifier: 'sources')
+    compile (group: 'eu.mihosoft.vrl', name: 'vrl', version: '0.4.2.8.5-SNAPSHOT', classifier: 'javadoc')
 
 }
 
