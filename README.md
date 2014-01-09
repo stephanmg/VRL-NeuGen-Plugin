@@ -34,7 +34,10 @@ To build the project from an IDE do the following:
 
 #### Command Line
 
-To build from the command line go to the project folder and call the `installVRLPlugin`  [Gradle](http://www.gradle.org/) task to build and install the plugin.
+Building the project from the command line is also possible.
+
+Go to the project folder and call the `installVRLPlugin`  [Gradle](http://www.gradle.org/)
+task to build and install the plugin.
 
 ##### Bash (Linux/OS X/Cygwin/other Unix-like OS)
 
