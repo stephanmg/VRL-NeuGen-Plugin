@@ -1,5 +1,7 @@
 # VRL-Tutorial-Plugin-01
 
+This project demonstrates how to create a simple [VRL](http://vrl-studio.mihosoft.eu) plugin.
+
 Webpage: http://vrl-studio.mihosoft.eu
 
 Join the [Developer Group](https://groups.google.com/forum/#!forum/vrl-developers) if you'd like to contribute.
