@@ -24,13 +24,13 @@ Specify correct path in `build.properties`, e.g.,
 
 ### 3. Build & Install
 
-#### 3.a IDE
+#### IDE
 
 - open the  [Gradle](http://www.gradle.org/) project
 - call the `installVRLPlugin` Gradle task to build and install the plugin
 - restart VRL-Studio
 
-#### 3.b Command Line
+#### Command Line
 
 Go to the project folder and call the `installVRLPlugin`  [Gradle](http://www.gradle.org/) task to build and install the plugin.
 
