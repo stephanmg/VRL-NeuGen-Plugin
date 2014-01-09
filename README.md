@@ -10,7 +10,7 @@ Tutorial Plugin Project
 
 # How To Configure
 
-specify correct path in `build.properties`, e.g.,
+Specify correct path in `build.properties`, e.g.,
     
     # vrl property folder location (plugin destination)
     vrldir=/Users/myusername/.vrl/0.4.2/default
@@ -21,16 +21,17 @@ specify correct path in `build.properties`, e.g.,
 
 - open the  [Gradle](http://www.gradle.org/) project
 - call the `installVRLPlugin` Gradle task to build and install the plugin
+- restart VRL-Studio
 
 ## Command Line
 
-go to the project folder: 
+Go to the project folder: 
 
     cd VRL-Tutorial-Plugin-01/VRL-Tutorial-Plugin-01
 
-call the `installVRLPlugin`  [Gradle](http://www.gradle.org/) task to build and install the plugin
+and call the `installVRLPlugin`  [Gradle](http://www.gradle.org/) task to build and install the plugin
 
     ./gradlew installVRLPlugin
 
-
+Finally, restart VRL-Studio
 
