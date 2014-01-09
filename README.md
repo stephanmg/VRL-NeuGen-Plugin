@@ -9,10 +9,27 @@ Tutorial Plugin Project
 
 # How To Configure
 
-- specify correct .vr
+- specify correct path in `build.properties`, e.g.,
+    
+    # vrl property folder location (plugin destination)
+    vrldir=/Users/miho/.vrl/0.4.2/default
 
 # How To Build
 
 ## IDE
 
-- call
+- open the Gradle project
+- call the `installVRLPlugin` Gradle task to build and install the plugin
+
+## Command Line
+
+- go to the project folder:
+
+    cd VRL-Tutorial-Plugin-01/VRL-Tutorial-Plugin-01
+
+- call the `installVRLPlugin` Gradle task to build and install the plugin
+  
+    ./gradlew installVRLPlugin
+
+
+
