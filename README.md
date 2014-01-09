@@ -1,6 +1,8 @@
 # VRL-Tutorial-Plugin-01
 
-Tutorial Plugin Project
+Webpage: http://vrl-studio.mihosoft.eu
+
+Join the [Developer Group](https://groups.google.com/forum/#!forum/vrl-developers) if you'd like to contribute.
 
 # Dependencies
 
@@ -29,7 +31,7 @@ Go to the project folder:
 
     cd VRL-Tutorial-Plugin-01/VRL-Tutorial-Plugin-01
 
-and call the `installVRLPlugin`  [Gradle](http://www.gradle.org/) task to build and install the plugin
+and call the `installVRLPlugin`  [Gradle](http://www.gradle.org/) task to build and install the plugin:
 
     ./gradlew installVRLPlugin
 
