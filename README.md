@@ -19,7 +19,7 @@ specify correct path in `build.properties`, e.g.,
 
 ## IDE
 
-- open the Gradle project
+- open the  [Gradle](http://www.gradle.org/) project
 - call the `installVRLPlugin` Gradle task to build and install the plugin
 
 ## Command Line
@@ -28,7 +28,7 @@ go to the project folder:
 
     cd VRL-Tutorial-Plugin-01/VRL-Tutorial-Plugin-01
 
-call the `installVRLPlugin` Gradle task to build and install the plugin
+call the `installVRLPlugin`  [Gradle](http://www.gradle.org/) task to build and install the plugin
 
     ./gradlew installVRLPlugin
 
