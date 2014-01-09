@@ -23,7 +23,7 @@ Tutorial Plugin Project
 
 ## Command Line
 
-- go to the project folder:
+- go to the project folder: 
 
     cd VRL-Tutorial-Plugin-01/VRL-Tutorial-Plugin-01
 
