@@ -6,7 +6,7 @@ Tutorial Plugin Project
 
 - JDK >= 1.6
 - IDE with [Gradle](http://www.gradle.org/) support (optional)
-- Internet Connetion (other dependencies will be automatically downloaded)
+- Internet Connection (other dependencies will be automatically downloaded)
 
 # How To Configure
 
