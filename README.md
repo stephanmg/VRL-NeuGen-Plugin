@@ -13,7 +13,7 @@ Tutorial Plugin Project
 specify correct path in `build.properties`, e.g.,
     
     # vrl property folder location (plugin destination)
-    vrldir=/Users/miho/.vrl/0.4.2/default
+    vrldir=/Users/myusername/.vrl/0.4.2/default
 
 # How To Build
 
