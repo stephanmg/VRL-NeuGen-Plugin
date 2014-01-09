@@ -29,13 +29,17 @@ Specify correct path in `build.properties`, e.g.,
 
 ## Command Line
 
-Go to the project folder: 
+Go to the project folder and call the `installVRLPlugin`  [Gradle](http://www.gradle.org/) task to build and install the plugin.
 
-    cd VRL-Tutorial-Plugin-01/VRL-Tutorial-Plugin-01
+### Bash (Linux/OS X/Cygwin/other Unix-like OS)
 
-and call the `installVRLPlugin`  [Gradle](http://www.gradle.org/) task to build and install the plugin:
-
+    cd Path/To/VRL-Tutorial-Plugin-01/VRL-Tutorial-Plugin-01
     ./gradlew installVRLPlugin
+    
+### Windows (CMD)
+
+    cd Path\To\VRL-Tutorial-Plugin-01\VRL-Tutorial-Plugin-01
+    gradlew installVRLPlugin
 
 Finally, restart VRL-Studio
 
