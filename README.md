@@ -1,5 +1,7 @@
 # VRL-Tutorial-Plugin-01
 
+[![Build Status](https://travis-ci.org/miho/VRL-Tutorial-Plugin-01.png)](https://travis-ci.org/miho/VRL-Tutorial-Plugin-01)
+
 This project demonstrates how to create a simple [VRL](http://vrl-studio.mihosoft.eu) plugin.
 
 Webpage: http://vrl-studio.mihosoft.eu
