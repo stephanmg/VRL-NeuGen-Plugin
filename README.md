@@ -8,29 +8,29 @@ Join the [Developer Group](https://groups.google.com/forum/#!forum/vrl-developer
 
 ## How To Build The Project
 
-### Dependencies
+### 1. Dependencies
 
 - JDK >= 1.6
 - Internet Connection (other dependencies will be downloaded automatically)
 - Optional: IDE with [Gradle](http://www.gradle.org/) support
 
 
-### Configuration
+### 2. Configuration
 
 Specify correct path in `build.properties`, e.g.,
     
     # vrl property folder location (plugin destination)
     vrldir=/Users/myusername/.vrl/0.4.2/default
 
-### Build & Install
+### 3. Build & Install
 
-#### IDE
+#### 3.a IDE
 
 - open the  [Gradle](http://www.gradle.org/) project
 - call the `installVRLPlugin` Gradle task to build and install the plugin
 - restart VRL-Studio
 
-#### Command Line
+#### 3.b Command Line
 
 Go to the project folder and call the `installVRLPlugin`  [Gradle](http://www.gradle.org/) task to build and install the plugin.
 
