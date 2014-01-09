@@ -26,13 +26,15 @@ Specify correct path in `build.properties`, e.g.,
 
 #### IDE
 
+To build the project from an IDE do the following:
+
 - open the  [Gradle](http://www.gradle.org/) project
 - call the `installVRLPlugin` Gradle task to build and install the plugin
 - restart VRL-Studio
 
 #### Command Line
 
-Go to the project folder and call the `installVRLPlugin`  [Gradle](http://www.gradle.org/) task to build and install the plugin.
+To build from the command line go to the project folder and call the `installVRLPlugin`  [Gradle](http://www.gradle.org/) task to build and install the plugin.
 
 ##### Bash (Linux/OS X/Cygwin/other Unix-like OS)
 
