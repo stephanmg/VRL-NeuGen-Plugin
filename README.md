@@ -12,17 +12,19 @@ Join the [Developer Group](https://groups.google.com/forum/#!forum/vrl-developer
 
 ### 1. Dependencies
 
-- JDK >= 1.6
+- JDK >= 1.8
 - Internet Connection (other dependencies will be downloaded automatically)
 - Optional: IDE with [Gradle](http://www.gradle.org/) support
 
 
-### 2. Configuration
+### 2. Configuration (Optional)
 
-Specify correct path in `build.properties`, e.g.,
+If the plugin shall be installed to a custom destination, specify the path in `build.properties`, e.g.,
     
     # vrl property folder location (plugin destination)
-    vrldir=/Users/myusername/.vrl/0.4.2/default
+    vrldir=/path/to/.vrl/0.4.3/myvrl
+    
+Otherwise, the plugin will be installed to the default location (depends on VRL version that is specified in the gradle dependencies).
 
 ### 3. Build & Install
 
