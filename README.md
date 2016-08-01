@@ -1,7 +1,5 @@
 # VRL-NeuGen-Plugin
 
-[![Build Status](https://travis-ci.org/stephanmg/VRL-NeuGen-Plugin.png)](https://travis-ci.org/stephanmg/VRL-NeuGen-Plugin)
-
 Join the [Developer Group](https://groups.google.com/forum/#!forum/vrl-developers) if you'd like to contribute.
 
 ## How To Build The Project
