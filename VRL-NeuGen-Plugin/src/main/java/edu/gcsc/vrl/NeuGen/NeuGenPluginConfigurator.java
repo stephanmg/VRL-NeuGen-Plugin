@@ -69,7 +69,7 @@ public class NeuGenPluginConfigurator extends VPluginConfigurator {
 	@Override
 	public void init(InitPluginAPI iApi) {
 		resourcePath = iApi.getResourceFolder();
-		/// initTemplateProject(iApi);
+		initTemplateProject(iApi);
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class NeuGenPluginConfigurator extends VPluginConfigurator {
 		templateProjectSrc = new File(api.getResourceFolder(), "template-01.vrlp");
 
 		if (!templateProjectSrc.exists()) {
-			saveProjectTemplate("/edu/gcsc/vrl/NeuGen/resources/projects/" + "template-01.vrlp");
+			saveProjectTemplate("/edu/gcsc/vrl/neugen/projects/" + "template-01.vrlp");
 		}
 
 		api.addProjectTemplate(new ProjectTemplate() {
@@ -124,7 +124,7 @@ public class NeuGenPluginConfigurator extends VPluginConfigurator {
 		InputStream in = NeuGenPluginConfigurator.class.getResourceAsStream(str);
 
 		try {
-			IOUtil.saveStreamToFile(in, new File(str));
+			IOUtil.saveStreamToFile(in, templateProjectSrc);
 		} catch (FileNotFoundException ex) {
 			System.err.println(ex);
 		} catch (IOException ex) {
