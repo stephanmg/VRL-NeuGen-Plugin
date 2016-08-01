@@ -1,12 +1,14 @@
 # VRL-NeuGen-Plugin
 
+CI: [![Build Status](https://travis-ci.org/stephanmg/VRL-NeuGen-Plugin.svg?branch=master)](https://travis-ci.org/stephanmg/VRL-NeuGen-Plugin)
+
 Join the [Developer Group](https://groups.google.com/forum/#!forum/vrl-developers) if you'd like to contribute.
 
 ## How To Build The Project
 
 ### 1. Dependencies
 
-- JDK 1.6
+- JDK 1.7
 - Internet Connection (other dependencies will be downloaded automatically)
 - Optional: IDE with [Gradle](http://www.gradle.org/) support
 
