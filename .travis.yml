@@ -1,17 +1,22 @@
 language: java
 
+
 jdk:
 - oraclejdk6
 
+
 env:
 - TERM=dumb
+
 
 build:
   - cd VRL-NeuGen-Plugin/
   - ./gradlew clean build
 
+
 after_success:
 - ./gradlew jacocoTestReport coveralls
+
 
 notifications:
   email:
