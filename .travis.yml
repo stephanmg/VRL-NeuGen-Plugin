@@ -1,17 +1,20 @@
-sudo: false
-
 language: java
+
 jdk:
-  - oraclejdk8
-  
-before_install:
-  - "export DISPLAY=:99.0"
-  - "export TERM=dumb"
-  - "sh -e /etc/init.d/xvfb start"
-  - "cd VRL-Tutorial-Plugin-01"
+- oraclejdk6
 
-install:
-    - TERM=dumb ./gradlew clean
+env:
+- TERM=dumb
 
-script:
-    - TERM=dumb ./gradlew assemble
+build:
+  - cd VRL-NeuGen-Plugin/
+  - ./gradlew clean build
+
+after_success:
+- ./gradlew jacocoTestReport coveralls
+
+notifications:
+  email:
+    - stephan@syntaktischer-zucker.de
+  on_success: always
+  on_failure: always
