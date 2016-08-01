@@ -9,7 +9,7 @@ env:
 - TERM=dumb
 
 
-build:
+script:
   - cd VRL-NeuGen-Plugin/
   - ./gradlew clean build
 
