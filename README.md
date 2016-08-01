@@ -1,10 +1,6 @@
-# VRL-Tutorial-Plugin-01
+# VRL-NeuGen-Plugin
 
-[![Build Status](https://travis-ci.org/miho/VRL-Tutorial-Plugin-01.png)](https://travis-ci.org/miho/VRL-Tutorial-Plugin-01)
-
-This project demonstrates how to create a simple [VRL](http://vrl-studio.mihosoft.eu) plugin.
-
-Webpage: http://vrl-studio.mihosoft.eu
+[![Build Status](https://travis-ci.org/stephanmg/VRL-NeuGen-Plugin.png)](https://travis-ci.org/stephanmg/VRL-NeuGen-Plugin)
 
 Join the [Developer Group](https://groups.google.com/forum/#!forum/vrl-developers) if you'd like to contribute.
 
@@ -12,7 +8,7 @@ Join the [Developer Group](https://groups.google.com/forum/#!forum/vrl-developer
 
 ### 1. Dependencies
 
-- JDK >= 1.8
+- JDK 1.6
 - Internet Connection (other dependencies will be downloaded automatically)
 - Optional: IDE with [Gradle](http://www.gradle.org/) support
 
@@ -45,12 +41,12 @@ task to build and install the plugin.
 
 ##### Bash (Linux/OS X/Cygwin/other Unix-like OS)
 
-    cd Path/To/VRL-Tutorial-Plugin-01/VRL-Tutorial-Plugin-01
+    cd Path/To/VRL-NeuGen-Plugin/VRL-NeuGen-Plugin
     ./gradlew installVRLPlugin
     
 ##### Windows (CMD)
 
-    cd Path\To\VRL-Tutorial-Plugin-01\VRL-Tutorial-Plugin-01
+    cd Path\To\VRL-NeuGen-Plugin\VRL-NeuGen-Plugin
     gradlew installVRLPlugin
 
 Finally, restart VRL-Studio

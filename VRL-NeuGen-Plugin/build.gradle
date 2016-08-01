@@ -1,0 +1,218 @@
+apply plugin: 'base'
+
+apply plugin: 'java'
+// warning: [options] bootstrap class path not set in conjunction with -source 1.6 can be ignored
+// meaning: we use not the 1.6 JDK but the 1.7 JDK, thus in effect we are cross compiling to Java 1.6
+sourceCompatibility = '1.6'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+	
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
+}
+
+if (!hasProperty('mainClass')) {
+    ext.mainClass = 'eu.mihosoft.vrl.codetools.Main'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+}
+
+def loadProperties(String sourceFileName) {
+    def config = new Properties()
+    def propFile = new File(projectDir,sourceFileName)
+    
+    if (propFile.isFile()) {
+        config.load(new FileInputStream(propFile))
+        for (Map.Entry property in config) {
+            ext.set(property.key, property.value)
+        }
+    }
+}
+
+// loads the property file
+loadProperties('build.properties')
+
+// add dependencies
+dependencies {
+    /// test dependencies (from maven)
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.easymock', name: 'easymock', version: '3.3.1'
+    
+    /// compile dependencies (from maven)
+    compile group: 'org.la4j', name:'la4j', version: '0.4.9'
+    compile group: 'org.jdom', name:'jdom2', version: '2.0.6'
+    compile group: 'commons-io', name: 'commons-io', version: '2.4'
+    compile group: 'log4j', name: 'log4j', version: '1.2.16'
+    
+    /// local compile dependencies 
+    compile files(vrldir+'/plugins/VRL-JFreeChart.jar');
+    compile files(vrldir+'/plugins/Density-Vis.jar');
+    compile (group: 'eu.mihosoft.vrl', name: 'vrl', version: '0.4.2.8.5-SNAPSHOT')
+    
+    // project lombok and levy's kd tree implementation (local dependencies)
+    compile fileTree(dir: "jars/", includes:['*.jar']);
+    compile files("/jars/NeuGen.jar");
+    
+}
+// create a fat-jar (class files plus dependencies
+// excludes VRL.jar (plugin jar files must not start with 'vrl-\\d+')
+jar {
+    // dependencies except VRL
+    from configurations.runtime.asFileTree.
+        filter({file->return !file.name.startsWith("vrl-0")}).
+        filter({file->return !file.name.startsWith("Density-Vis.jar")}).
+        filter({file->return !file.name.startsWith("VRL-JFreeChart.jar")}).
+        filter({file->return !file.name.startsWith("VRL-SWC-Density-Vis.jar")}).
+        files.collect { zipTree(it) }
+
+    // project class files compiled from source
+    from files(sourceSets.main.output.classesDir)
+}
+
+
+// compiles and installs the vrl plugin to the specified folder
+task installVRLPlugin(dependsOn: [clean,jar]) << {
+    println(">> copying vrl plugin to: " + vrldir+"/plugin-updates")
+    copy {
+        from buildDir.getPath()+"/libs/"+rootProject.name + ".jar"
+        into vrldir+"/plugin-updates"
+        include '**/*.jar'
+    }
+}
+
+task copyVRLPlugin() << {
+    println(">> copying vrl plugin to: " + vrldir+"/plugin-updates")
+    copy {
+        from buildDir.getPath()+"/libs/"+rootProject.name + ".jar"
+        into vrldir+"/plugin-updates"
+        include '**/*.jar'
+    }
+}
+
+apply plugin: 'jacoco'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.1'
+    }
+}
+
+// override the files which should be included in the test report
+// somehow the difference operator for FileCollection does not work,
+// therefore i include all classes in a positive way
+jacocoTestReport.doFirst {
+	def base_dir = 'build/classes/main/edu/gcsc/vrl/swcdensityvis';
+	def all_files = files('build/classes/main/edu/gcsc/vrl/swcdensityvis/');
+	
+	def exclude = files('build/classes/main/edu/gcsc/vrl/swcdensityvis/ComputeSWCDensity.class',
+		            'build/classes/main/edu/gcsc/vrl/swcdensityvis/KDTreeDemo.class',
+			    'build/classes/main/edu/gcsc/vrl/swcdensityvis/ComputeSWCDensity.class',
+			    'build/classes/main/edu/gcsc/vrl/swcdensityvis/ImageVoxels.class',
+			    'build/classes/main/edu/gcsc/vrl/swcdensityvis/SWCLoadStackComponent.class'
+	                     );
+			     
+	/// this does not work:
+	/// classDirectories = all_files - exclude;
+	classDirectories = files(base_dir+'/Cuboid.class', base_dir+'/CuboidUtility.class',
+	                         base_dir+'/DensityImpl.class', base_dir+'/DensityUtil.class',
+				 base_dir+'/Edge.class', base_dir+'/EdgeUtility.class',
+				 base_dir+'/SWCCompartmentInformation.class', base_dir+'/SWCUtility.class',
+				 base_dir+'/SwappablePair.class', base_dir+'/SwappablePairUtility.class',
+				 base_dir+'/CompUtility.class'
+	);
+}
+
+jacocoTestReport {
+    description = "Generates Jacoco coverage reports for unit tests"
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
+}
+
+//
+// Add support for a global test report
+// source https://github.com/kercheval/GradleCMPlugin/wiki/Create-Test-Report-in-Root-Project-with-Gradle
+//
+task testReport(type: TestReport) {
+    setDescription('Generates a test report from all subproject test tasks')
+    setGroup(JavaBasePlugin.DOCUMENTATION_GROUP)
+
+    //
+    // Keep track of total failure count for later test and output
+    //
+    def testFailures = 0
+
+    //
+    // Place the output in the root build reports directory by default
+    //
+    destinationDir = file("$buildDir/reports/allTests")
+
+    //
+    // Include the results from the `test` task in all subprojects.
+    // The TestReport task does not handle things well if a subproject 
+    // does not have the binary output, so this task assumes all subprojects 
+    // include the gradle java plugin!
+    //
+    reportOn subprojects*.test
+
+    //
+    // Every subproject should ignore test failures, but here we add a 
+    // test suite failure filter to ensure we keep track of the fact that
+    // failures have occurred (for the build failure check below)
+    //
+    subprojects {
+        test {
+            ignoreFailures true
+            afterSuite { td, tr ->
+                if (td.getParent() == null) {
+                    testFailures += tr.getFailedTestCount()
+                }
+            }
+        }
+    }
+
+    //
+    // The last thing to do in this task is to check for failures.  
+    // The build as a whole should fail if any tests failed.
+    //
+    doLast {
+        if (testFailures > 0) {
+           throw new Exception("There were ${testFailures} test failures")
+        }
+    }
+}
+
+/*
+/// add git dependencies (remote dependencies like maven)
+/// for now we add dependency as jars, but we could also
+/// make use of https://github.com/bat-cha/gradle-plugin-git-dependencies
+/// which provides a way to add github projects as dependencies 
+apply plugin: 'git-dependencies'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.batcha.gradle.plugins:git-dependencies:0.2'
+    }
+}
+
+dependencies {
+
+  compile('edu.gcsc.vrl.densityvis:Density-Vis').ext.git = 'https://github.com/NeuroBox3D/VRL-Density-Vis.git'
+  compile('edu.gcsc.vrl.jfreechart:JFreeChart').ext.git  = 'https://github.com/miho/VRL-JFreeChart.git'
+  compile('eu.mihosoft.vrl:vrl').ext.git                 = 'https://github.com/VRL-Studio/VRL.git'
+  compile('eu.mihosoft.jcsg').ext.git                    = 'https://github.com/miho/JCSG/tree/java6.git'
+
+}
+*/
