@@ -51,3 +51,7 @@ task to build and install the plugin.
 
 Finally, restart VRL-Studio
 
+
+### 4. Usage
+Open the provided template project "NeuGen - Template #1" to get started.
+
