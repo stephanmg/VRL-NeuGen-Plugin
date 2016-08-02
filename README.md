@@ -12,6 +12,7 @@ Issues:
 Code Climate:
 * [![Code Climate](https://codeclimate.com/github/stephanmg/VRL-NeuGen-Plugin/badges/gpa.svg)](https://codeclimate.com/github/stephanmg/VRL-NeuGen-Plugin)
 [![Issue Count](https://codeclimate.com/github/stephanmg/VRL-NeuGen-Plugin/badges/issue_count.svg)](https://codeclimate.com/github/stephanmg/VRL-NeuGen-Plugin)
+[![Test Coverage](https://codeclimate.com/github/stephanmg/VRL-NeuGen-Plugin/badges/coverage.svg)](https://codeclimate.com/github/stephanmg/VRL-NeuGen-Plugin/coverage)
 
 VersionEye:
 * [![Dependency Status](https://www.versioneye.com/user/projects/57a0d6473d8eb6004f9bce99/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57a0d6473d8eb6004f9bce99)
