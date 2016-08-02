@@ -111,25 +111,12 @@ buildscript {
 // somehow the difference operator for FileCollection does not work,
 // therefore i include all classes in a positive way
 jacocoTestReport.doFirst {
-	def base_dir = 'build/classes/main/edu/gcsc/vrl/swcdensityvis';
-	def all_files = files('build/classes/main/edu/gcsc/vrl/swcdensityvis/');
-	
-	def exclude = files('build/classes/main/edu/gcsc/vrl/swcdensityvis/ComputeSWCDensity.class',
-		            'build/classes/main/edu/gcsc/vrl/swcdensityvis/KDTreeDemo.class',
-			    'build/classes/main/edu/gcsc/vrl/swcdensityvis/ComputeSWCDensity.class',
-			    'build/classes/main/edu/gcsc/vrl/swcdensityvis/ImageVoxels.class',
-			    'build/classes/main/edu/gcsc/vrl/swcdensityvis/SWCLoadStackComponent.class'
-	                     );
-			     
+	def base_dir = 'build/classes/main/edu/gcsc/vrl/NeuGen';
+	def all_files = files('build/classes/main/edu/gcsc/vrl/NeuGen');
+	def exclude = files('build/classes/main/edu/gcsc/vrl/neugen/NeuGenPluginConfigurator');
 	/// this does not work:
 	/// classDirectories = all_files - exclude;
-	classDirectories = files(base_dir+'/Cuboid.class', base_dir+'/CuboidUtility.class',
-	                         base_dir+'/DensityImpl.class', base_dir+'/DensityUtil.class',
-				 base_dir+'/Edge.class', base_dir+'/EdgeUtility.class',
-				 base_dir+'/SWCCompartmentInformation.class', base_dir+'/SWCUtility.class',
-				 base_dir+'/SwappablePair.class', base_dir+'/SwappablePairUtility.class',
-				 base_dir+'/CompUtility.class'
-	);
+	classDirectories = files(base_dir+'/NeuGenComponent.class');
 }
 
 jacocoTestReport {
