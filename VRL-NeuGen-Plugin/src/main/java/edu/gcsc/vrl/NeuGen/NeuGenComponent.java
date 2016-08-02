@@ -32,7 +32,7 @@ public class NeuGenComponent implements Serializable {
 	 * @param inputFolder 
 	 */
 	public void open_network(
-		@ParamInfo(name = "Output folder", typeName = "Location output", style = "load-folder-dialog")
+		@ParamInfo(name = "Input project folder", typeName = "Location input", style = "load-folder-dialog")
 		File inputFolder) {
 		this.params	= neugenBackend.create_and_open_project(
 				NeuGenPluginConfigurator.resourcePath

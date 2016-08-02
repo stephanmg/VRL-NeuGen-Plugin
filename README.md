@@ -3,16 +3,17 @@
 Travis: 
 * [![Build Status](https://travis-ci.org/stephanmg/VRL-NeuGen-Plugin.svg?branch=master)](https://travis-ci.org/stephanmg/VRL-NeuGen-Plugin)
 
+Coveralls:
+* [![Coverage Status](https://coveralls.io/repos/github/stephanmg/VRL-NeuGen-Plugin/badge.svg)](https://coveralls.io/github/stephanmg/VRL-NeuGen-Plugin)
+
 Issues:
 * [![Stories in Backlog](https://badge.waffle.io/stephanmg/vrl-neugen-plugin.png?label=backlog&title=Backlog)](http://waffle.io/stephanmg/vrl-neugen-plugin)
 [![Stories in Ready](https://badge.waffle.io/stephanmg/vrl-neugen-plugin.png?label=ready&title=Ready)](http://waffle.io/stephanmg/vrl-neugen-plugin)
 [![Stories in In Progress](https://badge.waffle.io/stephanmg/vrl-neugen-plugin.png?label=in progress&title=In Progress)](http://waffle.io/stephanmg/vrl-neugen-plugin)
 [![Stories in Done](https://badge.waffle.io/stephanmg/vrl-neugen-plugin.png?label=done&title=Done)](http://waffle.io/stephanmg/vrl-neugen-plugin)
 
-Code Climate:
-* [![Code Climate](https://codeclimate.com/github/stephanmg/VRL-NeuGen-Plugin/badges/gpa.svg)](https://codeclimate.com/github/stephanmg/VRL-NeuGen-Plugin)
-[![Issue Count](https://codeclimate.com/github/stephanmg/VRL-NeuGen-Plugin/badges/issue_count.svg)](https://codeclimate.com/github/stephanmg/VRL-NeuGen-Plugin)
-[![Test Coverage](https://codeclimate.com/github/stephanmg/VRL-NeuGen-Plugin/badges/coverage.svg)](https://codeclimate.com/github/stephanmg/VRL-NeuGen-Plugin/coverage)
+Codacy:
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/70786ea69d38466b85726e964497f901)](https://www.codacy.com/app/stephan_5/VRL-NeuGen-Plugin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=stephanmg/VRL-NeuGen-Plugin&amp;utm_campaign=Badge_Grade)
 
 VersionEye:
 * [![Dependency Status](https://www.versioneye.com/user/projects/57a0d6473d8eb6004f9bce99/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57a0d6473d8eb6004f9bce99)
