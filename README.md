@@ -13,7 +13,7 @@ Issues:
 [![Stories in Done](https://badge.waffle.io/stephanmg/vrl-neugen-plugin.png?label=done&title=Done)](http://waffle.io/stephanmg/vrl-neugen-plugin)
 
 Codacy:
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/70786ea69d38466b85726e964497f901)](https://www.codacy.com/app/stephan_5/VRL-NeuGen-Plugin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=stephanmg/VRL-NeuGen-Plugin&amp;utm_campaign=Badge_Grade)
+* [![Codacy Badge](https://api.codacy.com/project/badge/Grade/70786ea69d38466b85726e964497f901)](https://www.codacy.com/app/stephan_5/VRL-NeuGen-Plugin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=stephanmg/VRL-NeuGen-Plugin&amp;utm_campaign=Badge_Grade)
 
 VersionEye:
 * [![Dependency Status](https://www.versioneye.com/user/projects/57a0d6473d8eb6004f9bce99/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57a0d6473d8eb6004f9bce99)
