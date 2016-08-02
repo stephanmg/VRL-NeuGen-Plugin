@@ -26,6 +26,21 @@ public class NeuGenComponent implements Serializable {
 	private String projectName;
 	private Map<String, XMLObject> params; 
 
+	
+	/**
+	 * @brief open a NeuGen network
+	 * @param inputFolder 
+	 */
+	public void open_network(
+		@ParamInfo(name = "Output folder", typeName = "Location output", style = "load-folder-dialog")
+		File inputFolder) {
+		this.params	= neugenBackend.create_and_open_project(
+				NeuGenPluginConfigurator.resourcePath
+				+ "/" + projectName, "", NeuGenConstants.NEOCORTEX_PROJECT,
+				true, true
+			);
+	}
+	
 	/**
 	 * @brief generate a NeuGen network
 	 * @param networkType
