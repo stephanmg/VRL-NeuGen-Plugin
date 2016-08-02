@@ -19,7 +19,7 @@ VersionEye:
 * [![Dependency Status](https://www.versioneye.com/user/projects/57a0d6473d8eb6004f9bce99/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57a0d6473d8eb6004f9bce99)
 
 License:
-* [![https://img.shields.io/badge/license-LGPLv3-blue.svg](./README.md)
+* [![LGPLv3](https://img.shields.io/badge/license-LGPLv3-blue.svg)](./README.md)
 
 Join the [Developer Group](https://groups.google.com/forum/#!forum/vrl-developers) if you'd like to contribute.
 
