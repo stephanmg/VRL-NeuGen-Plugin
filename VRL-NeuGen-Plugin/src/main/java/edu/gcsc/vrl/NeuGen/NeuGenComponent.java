@@ -25,7 +25,6 @@ public class NeuGenComponent implements Serializable {
 	private static final NGBackend neugenBackend = new NGBackend();
 	private String projectName;
 	private Map<String, XMLObject> params; 
-
 	
 	/**
 	 * @brief open a NeuGen network

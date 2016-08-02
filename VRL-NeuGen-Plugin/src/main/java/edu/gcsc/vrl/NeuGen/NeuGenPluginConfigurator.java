@@ -33,8 +33,10 @@ public class NeuGenPluginConfigurator extends VPluginConfigurator {
 		setIdentifier(new PluginIdentifier("NeuGen-Plugin", "0.1"));
 		setDescription("NeuGen VRL Plugin");
 		setCopyrightInfo("NeuGen-Plugin",
-			"(c) stephanmg", "www.syntaktischer-zucker.de", "LGPLv3", "");
-		addDependency(new PluginDependency("VRL", "0.4.2.7", VersionInfo.UNDEFINED));
+			"(c) stephanmg", "www.syntaktischer-zucker.de", 
+			"LGPLv3", "");
+		addDependency(new PluginDependency("VRL", "0.4.2.7", 
+			VersionInfo.UNDEFINED));
 
 	}
 
@@ -44,7 +46,6 @@ public class NeuGenPluginConfigurator extends VPluginConfigurator {
 	 */
 	@Override
 	public void register(PluginAPI api) {
-
 		// register plugin with canvas
 		if (api instanceof VPluginAPI) {
 			VPluginAPI vapi = (VPluginAPI) api;
@@ -86,10 +87,12 @@ public class NeuGenPluginConfigurator extends VPluginConfigurator {
 	 * @param api
 	 */
 	private void initTemplateProject(InitPluginAPI api) {
-		templateProjectSrc = new File(api.getResourceFolder(), "template-01.vrlp");
+		templateProjectSrc = new File(api.getResourceFolder(), 
+			"template-01.vrlp");
 
 		if (!templateProjectSrc.exists()) {
-			saveProjectTemplate("/edu/gcsc/vrl/neugen/projects/" + "template-01.vrlp");
+			saveProjectTemplate("/edu/gcsc/vrl/neugen/projects/" 
+				+ "template-01.vrlp");
 		}
 
 		api.addProjectTemplate(new ProjectTemplate() {
@@ -121,7 +124,8 @@ public class NeuGenPluginConfigurator extends VPluginConfigurator {
 	 * @param str
 	 */
 	private void saveProjectTemplate(String str) {
-		InputStream in = NeuGenPluginConfigurator.class.getResourceAsStream(str);
+		InputStream in = 
+			NeuGenPluginConfigurator.class.getResourceAsStream(str);
 
 		try {
 			IOUtil.saveStreamToFile(in, templateProjectSrc);
