@@ -14,10 +14,7 @@ import org.neugen.gui.NeuGenConstants;
 /**
  * @brief NeuGen component for VRL-Studio
  * @author stephanmg <stephan@syntaktischer-zucker.de>
- * 
- * @todo NGBackend should be refactored, such that the params
- * 	 map is hidden - otherwise we walk somehow on clutches
- *       by dragging the map param with us all the time!
+ * Note: The params map will be refactored soon into the NeuGen' pseudo-backend
  */
 @ComponentInfo(name = "NeuGenComponent", category = "Neuro/NeuGen")
 public class NeuGenComponent implements Serializable {
@@ -27,7 +24,7 @@ public class NeuGenComponent implements Serializable {
 	/// members
 	private static final NGBackend neugenBackend = new NGBackend();
 	private String projectName;
-	private Map<String, XMLObject> params;
+	private Map<String, XMLObject> params; 
 
 	/**
 	 * @brief generate a NeuGen network
