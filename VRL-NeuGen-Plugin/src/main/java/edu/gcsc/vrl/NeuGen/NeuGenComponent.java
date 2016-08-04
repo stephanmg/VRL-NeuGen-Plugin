@@ -4,6 +4,7 @@ package edu.gcsc.vrl.NeuGen;
 /// imports
 import eu.mihosoft.vrl.annotation.ComponentInfo;
 import eu.mihosoft.vrl.annotation.ParamInfo;
+import eu.mihosoft.vrl.system.VMessage;
 import java.io.File;
 import java.io.Serializable;
 import java.util.Map;
@@ -79,7 +80,14 @@ public class NeuGenComponent implements Serializable {
 		@ParamInfo(name = "Output folder", typeName = "Location output", style = "save-folder-dialog") File outputFolder,
 		@ParamInfo(name = "Output name", typeName = "Output name") String outputName
 	) {
-		neugenBackend.export_network(exportFormat, outputFolder + "/" + outputName + "." + exportFormat.toLowerCase(), false);
+
+		if (outputFolder.isDirectory()) {
+			neugenBackend.export_network(exportFormat, outputFolder + "/" + outputName + "." + exportFormat.toLowerCase(), false);
+		} else {
+			VMessage.info("Export network", "Given folder: " 
+				+ outputFolder.toString() + " does not exist. "
+				+ "Therefore network export is not possible.");
+		}
 	}
 
 	/**
