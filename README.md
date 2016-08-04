@@ -1,5 +1,8 @@
 # VRL-NeuGen-Plugin
 
+Plugin using NeuGen's pseudo-backend (cf. https://github.com/NeuroBox3D/NeuGen/tree/devel) to allow usage of NeuGen functionality
+within a VRL-Studio Project.
+
 Travis: 
 * [![Build Status](https://travis-ci.org/stephanmg/VRL-NeuGen-Plugin.svg?branch=master)](https://travis-ci.org/stephanmg/VRL-NeuGen-Plugin)
 
